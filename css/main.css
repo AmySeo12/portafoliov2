@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Bromello";
+  src: url("../fonts/bromello/bromello.otf") format("opentype");
+}
+
+body{
+  background-color: #303841;
+}
+
+header{
+  background-image: url(../img/portada.jpg);
+    height: 96vh;
+    width: 80%;
+    margin: 4% auto;
+}
+
+.parallax{
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.texto{
+  position: absolute;
+  color: white;
+  background-color: rgba(0,0,0,.6);
+  padding: 2% 8%;
+  top: 25%;
+  left: 22.5%;
+  width: 54%;
+  text-align: center;
+}
+
+.texto h2{
+  -webkit-animation: flipInX 3s;
+  font-family: 'Dancing Script', cursive;
+  font-size: 6.3em;
+  margin: 4.5% 0;
+}
+
+.texto h3{
+  font-family: 'Muli', sans-serif;
+  -webkit-animation: slideInUp 3s;
+}
+
+.effect.up-scroll {
+  transform: translate3d(0,-$parallax-offset / 2,0);
+  .content-wrapper {
+    transform: translateY($parallax-offset / 2);
+  }
+  + .effect {
+    transform: translate3d(0,$parallax-offset,0);
+      .content-wrapper {
+        transform: translateY($parallax-offset);
+      }
+    }
+}
+
+.effect.down-scroll {
+  transform: translate3d(0,-(100vh + $parallax-offset),0);
+  .content-wrapper {
+    transform: translateY($content-offset);
+  }
+  + .effect:not(.down-scroll) {
+    transform: translate3d(0,-$parallax-offset / 2,0);
+      .content-wrapper {
+        transform: translateY($parallax-offset / 2);
+      }
+  }
+}
+
+.fixed{
+  position: fixed;
+  padding: 2%;
+  z-index: 6;
+  top: 42%;
+}
+
+.icono{
+  color: white;
+  font-size: 6em;
+}
+
+.right{
+  right: 0;
+}
+
+.label{
+  transform: rotate(-90deg) translateZ(0);
+  top: 34px;
+  left: -3px;
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 8px;
+  letter-spacing: .35rem;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: .7;
+  transition: 1s all ease-out;
+}
+
+.rigth{
+  right: 9%;
+}
+
+@media (max-width: 767px){
+  .texto{
+    width: 80%;
+    left: 10%;
+    height: 97vh;
+    top: 2%;
+    padding-top: 40%;
+  }
+
+  .texto h2{
+    font-size: 4em;
+  }
+
+  .icono{
+    color: #EEEEEE;
+    font-size: 3em;
+  }
+}
